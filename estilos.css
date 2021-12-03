@@ -1,0 +1,153 @@
+body {
+    background: aqua;
+    margin: 0;
+}
+
+.titulo {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(0, 235, 235);
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 20px;
+    justify-content: center;
+}
+
+.column {
+    flex: 22%;
+    max-width: 22%;
+    padding: 0 12px;
+}
+
+.column img {
+    margin-top: 20px;
+    vertical-align: middle;
+    width: 100%;
+    transition: all .2s ease;
+    border-radius: 20px;
+}
+
+.column img:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .7s ease;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.overlay .slideshow {
+    width: 90%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, .9);
+    color: black;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.slideshow img {
+    height: 90%;
+    width: 80%;
+    object-fit: contain;
+}
+
+.btn_close {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    font-size: 35px;
+    background-color: rgba(0, 0, 0, .7);
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    transition: all .2s ease;
+}
+
+.btn_close:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.button {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%);
+    cursor: pointer;
+    color: rgb(187, 90, 25);
+}
+
+.button:hover > i {
+    transform: scale(1.1);
+    transition: all .2s ease;
+}
+
+.back {
+    left: 40px;
+}
+
+.next {
+    right: -30px;
+}
+
+.mdi {
+    pointer-events: none;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }    
+    .button {
+        font-size: 55px;
+    }
+    .back {
+        left: 30px;
+    }
+    .next {
+        right: -40px;
+    }
+    .slideshow img {
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
